@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+@keyframes scaleUp {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 7;
+    }
+
+}
+
+@keyframes slideLeft {
+    50% {
+        left: 50%;
+        top: 50%;
+
+    }
+
+    100% {
+        left: 25%;
+        top: 50%;
+        /* transform: translate(-25%, -50%); */
+    }
+
+}
+
+@keyframes slideingDiv {
+    from {
+        right: -900px;
+    }
+
+    to {
+        right: 5px;
+    }
+}
+
+.about-heading-div {
+    animation: scaleUp 2s ease-in forwards, slideLeft 2s ease-in 2s forwards;
+    font-family: "Russo One", sans-serif;
+    position: absolute;
+}
+
+.about-content {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    right: -900px;
+    animation: slideingDiv 2s ease-in 2s forwards;
+}
+
+.about-content span {
+    border-left: 6px solid green;
+    height: 350px;
+}
+
+.about-text {
+    width: 75%;
+    text-align: justify;
+}

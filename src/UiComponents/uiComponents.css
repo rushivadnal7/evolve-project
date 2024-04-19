@@ -1,0 +1,12 @@
+@keyframes rotateLogo {
+    from{
+        transform: rotateY('45deg');
+    }
+    to{
+        transform: rotateY('360deg');
+    }
+}
+
+.evolve-logo {
+    animation: rotateLogo 2s ease-in infinite ;
+}

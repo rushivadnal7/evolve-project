@@ -1,0 +1,37 @@
+@keyframes animateBoxLeft {
+    from{
+        left: -500px;
+    }
+    to{
+        left: 0px;
+    }
+}
+@keyframes animateBoxRight {
+    from{
+        right: -300px;
+    }
+    to{
+        right: 0px;
+    }
+}
+
+/* .program{
+    height: 100Vh;
+}
+
+.program-box-left{
+    position: absolute;
+    animation: animateBoxLeft 1s ease-in-out forwards;
+}
+.program-box-mid{
+    position: absolute;
+    top:0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    
+}
+.program-box-right{
+    animation: animateBoxRight 1s ease-in-out forwards;
+    position: absolute;
+    right :0;
+} */
