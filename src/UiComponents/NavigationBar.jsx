@@ -9,12 +9,7 @@ const NavigationBar = (props) => {
 
     const { currentUser, userLoggedIn, loading } = useAuth();
 
-    console.log(currentUser)
-    // console.log(currentUser.metadata.creationTime)
-    console.log(userLoggedIn)
-
     const handleUserLogOut = () => {
-        // console.log(props.isUserLogged)
         console.log('User Logged Out successfully ')
         doSignOut()
     }
@@ -42,7 +37,7 @@ const NavigationBar = (props) => {
                     <span class="ml-3 text-xl font-bold xl:block lg:hidden">Evolve</span>
                 </a>
                 <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-                    {currentUser ? currentUser.email : ''}
+                    {currentUser ? <p className='mr-4 poppins-medium border px-2 rounded-sm'>hello , {currentUser.email}</p>  : ''}
 
                     {
                         userLoggedIn === true ?

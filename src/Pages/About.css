@@ -48,6 +48,7 @@
     justify-content: space-around;
     align-items: center;
     right: -900px;
+    height: 70%;
     animation: slideingDiv 2s ease-in 2s forwards;
 }
 
@@ -58,5 +59,6 @@
 
 .about-text {
     width: 75%;
+    height: 100%;
     text-align: justify;
 }

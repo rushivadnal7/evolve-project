@@ -23,7 +23,7 @@ const LandingPage = () => {
                 <NavigationBar isUserLogged={user} />
                 <Home />
                 <Program />
-                {/* <Membership /> */}
+                <Membership />
                 <Testimonials />
                 <Footer />
             </section>

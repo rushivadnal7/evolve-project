@@ -10,52 +10,22 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 
-import leg from '../imgs/leg.png'
-import chest from '../imgs/chest.png'
-import core from '../imgs/running.png'
+import BackDay from '../imgs/backBB.jpg'
+import ChestDay from '../imgs/chestBB.jpg'
+import LegDay from '../imgs/legBB.jpg'
 import intro_img from '../imgs/strength_intro_image.jpg'
 import playButton from '../imgs/play-button.png'
 import Footer from '@/UiComponents/Footer'
 import { Link } from 'react-router-dom'
-import { firebaseStorage } from '@/firebase/firebase'
-import { getDownloadURL, listAll, ref } from 'firebase/storage'
 import NavigationBar from '@/UiComponents/NavigationBar'
 const BodyBuilding = () => {
 
-  const [urls, setUrls] = useState([])
-  useEffect(() => {
-    const fetchImages = async () => {
-      const storageRef = ref(firebaseStorage, 'strength training/upper body')
-      const result = await listAll(storageRef)
-      const urlPromises = result.items.map((imageRef) => {
-        return getDownloadURL(imageRef)
-      })
 
-      return Promise.all(urlPromises)
-    }
-    const loadImages = async () => {
-      const urls = await fetchImages()
-      setUrls(urls)
-      // console.log(urls)
-    }
-
-    loadImages()
-  }, [])
-
-
-
-  let state = {
-    exercises: [
-      { chest: 'Upper Body' },
-      { leg: 'Lower Body' },
-      { core: 'Core Muscles' }
-    ]
-  }
 
   const [exercises, setExercises] = useState([
-    { image: chest, name: 'PushDay' },
-    { image: leg, name: 'PullDay' },
-    { image: core, name: 'LegDay' }
+    { image: ChestDay, name: 'PushDay' },
+    { image: BackDay, name: 'PullDay' },
+    { image: LegDay, name: 'LegDay' }
   ]);
 
   return (

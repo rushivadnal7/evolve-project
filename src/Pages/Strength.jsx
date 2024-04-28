@@ -23,35 +23,25 @@ import NavigationBar from '@/UiComponents/NavigationBar'
 
 const Strength = () => {
 
-  const [urls, setUrls] = useState([])
-  useEffect(() => {
-    const fetchImages = async () => {
-      const storageRef = ref(firebaseStorage, 'strength training/upper body')
-      const result = await listAll(storageRef)
-      const urlPromises = result.items.map((imageRef) => {
-        return getDownloadURL(imageRef)
-      })
+  // const [urls, setUrls] = useState([])
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     const storageRef = ref(firebaseStorage, 'strength training/upper body')
+  //     const result = await listAll(storageRef)
+  //     const urlPromises = result.items.map((imageRef) => {
+  //       return getDownloadURL(imageRef)
+  //     })
 
-      return Promise.all(urlPromises)
-    }
-    const loadImages = async () => {
-      const urls = await fetchImages()
-      setUrls(urls)
-      // console.log(urls)
-    }
+  //     return Promise.all(urlPromises)
+  //   }
+  //   const loadImages = async () => {
+  //     const urls = await fetchImages()
+  //     setUrls(urls)
+  //     // console.log(urls)
+  //   }
 
-    loadImages()
-  }, [])
-
-
-
-  let state = {
-    exercises: [
-      { chest: 'Upper Body' },
-      { leg: 'Lower Body' },
-      { core: 'Core Muscles' }
-    ]
-  }
+  //   loadImages()
+  // }, [])
 
   const [exercises, setExercises] = useState([
     { image: chest, name: 'UpperBody' },
@@ -100,26 +90,13 @@ const Strength = () => {
                     </div>
                   </Link>
                 </DialogTrigger>
-                <DialogContent className=''>
-                  <DialogHeader>
-                    <DialogTitle>Videos</DialogTitle>
-                    <DialogDescription>
-                      <div className="videos-container">
-                        {/* {
-                            
-                          }
-                              <div className="box">
-                                <div className="video-div border-2 border-lime-500 h-max w-40 m-4" key={index}>
-                                  <video className='' controls onError={(e) => console.error("Error loading video:", e)}>
-                                    <source src={videoUrl} type='video/mp4' />
-                                    Your browser does not support the video tag.
-                                  </video>
-                                </div>
-                              </div> */}
-                      </div>
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
+                  {/* <DialogContent className=''>
+                    <DialogHeader>
+                      <DialogTitle>Videos</DialogTitle>
+                      <DialogDescription>
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent> */}
               </Dialog>
             ))}
           </div>

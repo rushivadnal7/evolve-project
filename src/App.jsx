@@ -19,6 +19,11 @@ import SignUp from './Pages/SignUp';
 import UpperBody_strength from './Pages/videosContentPages/UpperBody_strength';
 import LowerBody_strength from './Pages/videosContentPages/LowerBody_strength';
 import CoreMuscles_strength from './Pages/videosContentPages/CoreMuscles_strength';
+import PushDay_BodyBuilding from './Pages/videosContentPages/PushDay_BodyBuilding';
+import LegDay_bodyBuilding from './Pages/videosContentPages/LegDay_bodyBuilding';
+import PullDay_bodyBuilding from './Pages/videosContentPages/PullDay_bodyBuilding'
+import BentArm_calisthenic from './Pages/videosContentPages/BentArm_calisthenic';
+import StraightArm_calisthenic from './Pages/videosContentPages/StraightArm_calisthenic';
 
 
 function App() {
@@ -67,6 +72,26 @@ function App() {
     {
       path: '/CoreMuscles',
       element: <CoreMuscles_strength />
+    },
+    {
+      path: '/PushDay',
+      element: <PushDay_BodyBuilding />
+    },
+    {
+      path: '/PullDay',
+      element: < PullDay_bodyBuilding />
+    },
+    {
+      path: '/LegDay',
+      element: <LegDay_bodyBuilding />
+    },
+    {
+      path: '/bentarm',
+      element: < BentArm_calisthenic />
+    },
+    {
+      path: '/straightarm',
+      element: <StraightArm_calisthenic />
     },
     {
       path: '/strengthVideo',
