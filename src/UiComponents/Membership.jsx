@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuth } from '@/contexts/authcontexts/ContextIndex'
 import { getDatabase, ref, set } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
+import Qrcode from '../imgs/QRcode.jpg'
 
 import {
     Dialog,
@@ -34,7 +35,7 @@ const Membership = () => {
             console.log(error)
         }
     }
-    
+
     const handlePaidPlan = () => {
         const UsersEmail = currentUser.uid
         console.log(UsersEmail)
@@ -86,13 +87,19 @@ const Membership = () => {
                                 </DialogTrigger>
                                 <DialogContent>
                                     <DialogHeader>
-                                        <DialogTitle>Are you absolutely sure?</DialogTitle>
+                                        <DialogTitle>PAYMENT</DialogTitle>
                                         <DialogDescription>
-                                            <button onClick={handleFreePlan} class="flex items-center mt-auto text-white bg-gray-800 border-0 py-2 px-4 w-max focus:outline-none hover:bg-gray-700 rounded">BUY FREE PLAN
-                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                                </svg>
-                                            </button>
+                                            <div className="content flex flex-col justify-center items-center ">
+
+                                                <div className="qr-code w-32 h-32 ">
+                                                    <img className='w-full h-full' src={Qrcode} alt="" />
+                                                </div>
+                                                <button onClick={handleFreePlan} class="flex items-center mt-auto text-white bg-gray-800 border-0 py-2 px-4 w-max focus:outline-none hover:bg-gray-700 rounded">BUY FREE PLAN
+                                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </DialogDescription>
                                     </DialogHeader>
                                 </DialogContent>
@@ -139,14 +146,19 @@ const Membership = () => {
                                 </DialogTrigger>
                                 <DialogContent>
                                     <DialogHeader>
-                                        <DialogTitle>Are you absolutely sure?</DialogTitle>
+                                        <DialogTitle>PAYMENT</DialogTitle>
                                         <DialogDescription>
+                                            <div className="content flex flex-col justify-center items-center ">
 
-                                            <button onClick={handlePaidPlan} class="flex items-center mt-auto text-white bg-gray-800 border-0 py-2 px-4 w-max focus:outline-none hover:bg-gray-700 rounded">BUY PAID PLAN
-                                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                                </svg>
-                                            </button>
+                                                <div className="qr-code w-32 h-32 ">
+                                                    <img className='w-full h-full' src={Qrcode} alt="" />
+                                                </div>
+                                                <button onClick={handlePaidPlan} class="flex items-center mt-auto text-white bg-gray-800 border-0 py-2 px-4 w-max focus:outline-none hover:bg-gray-700 rounded">BUY PAID PLAN
+                                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
                                         </DialogDescription>
                                     </DialogHeader>
                                 </DialogContent>
