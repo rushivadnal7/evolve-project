@@ -45,7 +45,7 @@ const PullDay_bodyBuilding = () => {
     return (
         <>
             <section className="text-gray-400 bg-gray-900 h-max ">
-                <h1 className='text-center poppins-bold text-2xl p-4 '>HAPPY PUSH DAY</h1>
+                <h1 className='text-center poppins-bold text-2xl p-4 '>HAPPY PULL DAY</h1>
                 <div className="container px-5 py-10 mx-auto ">
                     <div className="flex flex-wrap -m-4">
                         {urls.map((videoUrl, index) => (
