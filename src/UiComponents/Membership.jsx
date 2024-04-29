@@ -20,34 +20,45 @@ const Membership = () => {
     const navigate = useNavigate()
 
     const handleFreePlan = () => {
-        const UsersEmail = currentUser.uid
-        console.log(UsersEmail)
+
+        const UsersUid = currentUser.uid
+        const UsersEmail = currentUser.email
+        const TrimmedEmail = UsersEmail.split("@");
+        console.log(TrimmedEmail[0])
+
 
         const db = getDatabase()
         console.log(db)
 
         try {
-            set(ref(db, 'users/' + UsersEmail), {
-                plan: 0
+            set(ref(db, 'users/' + UsersUid + TrimmedEmail[0]), {
+                planCode: 0,
+                Plan: 'Free Plan'
             })
             console.log('plan added')
+            alert('Standard Plan Added')
         } catch (error) {
             console.log(error)
         }
     }
 
     const handlePaidPlan = () => {
-        const UsersEmail = currentUser.uid
-        console.log(UsersEmail)
+        const UsersUid = currentUser.uid
+        const UsersEmail = currentUser.email
+        const TrimmedEmail = UsersEmail.split("@");
+        console.log(TrimmedEmail[0])
+
 
         const db = getDatabase()
         console.log(db)
 
         try {
-            set(ref(db, 'users/' + UsersEmail), {
-                plan: 1
+            set(ref(db, 'users/' + UsersUid + TrimmedEmail[0]), {
+                planCode: 1,
+                Plan: 'Paid Plan'
             })
             console.log('plan added')
+            alert('Premium Plan Added')
         } catch (error) {
             console.log(error)
         }
