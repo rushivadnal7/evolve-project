@@ -61,6 +61,7 @@ const UpperBody_strength = () => {
                                         <source src={videoUrl} type='video/mp4' />
                                         Your browser does not support the video tag.
                                     </video>
+                                    <div>For More content Get the premium Plan</div>
                                 </div>
                             ) : <div key={index} className="lg:w-1/4 md:w-1/2 p-4 w-full">
                                 <video className='' controls onError={(e) => console.error("Error loading video:", e)}>
