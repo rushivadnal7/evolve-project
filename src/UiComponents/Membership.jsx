@@ -23,9 +23,9 @@ const Membership = () => {
 
         const UsersUid = currentUser.uid
         const UsersEmail = currentUser.email
+        const userCreationTime = currentUser.metadata.creationTime
+        const userLastSignIn = currentUser.metadata.lastSignInTime
         const TrimmedEmail = UsersEmail.split("@");
-        console.log(TrimmedEmail[0])
-
 
         const db = getDatabase()
         console.log(db)
@@ -33,9 +33,12 @@ const Membership = () => {
         try {
             set(ref(db, 'users/' + UsersUid + TrimmedEmail[0]), {
                 planCode: 0,
-                Plan: 'Free Plan'
+                Plan: 'Free Plan',
+                email: UsersEmail,
+                uid: UsersUid,
+                creationTime: userCreationTime,
+                lastSignIn: userLastSignIn
             })
-            console.log('plan added')
             alert('Standard Plan Added')
         } catch (error) {
             console.log(error)
@@ -45,8 +48,10 @@ const Membership = () => {
     const handlePaidPlan = () => {
         const UsersUid = currentUser.uid
         const UsersEmail = currentUser.email
+        const userCreationTime = currentUser.metadata.creationTime
+        const userLastSignIn = currentUser.metadata.lastSignInTime
         const TrimmedEmail = UsersEmail.split("@");
-        console.log(TrimmedEmail[0])
+
 
 
         const db = getDatabase()
@@ -55,9 +60,12 @@ const Membership = () => {
         try {
             set(ref(db, 'users/' + UsersUid + TrimmedEmail[0]), {
                 planCode: 1,
-                Plan: 'Paid Plan'
+                Plan: 'Paid Plan',
+                email: UsersEmail,
+                uid: UsersUid,
+                creationTime: userCreationTime,
+                lastSignIn: userLastSignIn
             })
-            console.log('plan added')
             alert('Premium Plan Added')
         } catch (error) {
             console.log(error)

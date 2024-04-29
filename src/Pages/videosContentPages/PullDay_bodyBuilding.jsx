@@ -5,10 +5,12 @@ import { getDownloadURL, listAll } from 'firebase/storage'
 import { ref as StorageRef } from 'firebase/storage'
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useAuth } from '@/contexts/authcontexts/ContextIndex'
+import NavigationBar from '@/UiComponents/NavigationBar'
 const PullDay_bodyBuilding = () => {
 
     const [urls, setUrls] = useState([])
     const { currentUser, userLoggedIn, loading } = useAuth();
+    const UserEmailName = currentUser.email.split('@')[0]
     const [plan, setPlan] = useState(null)
 
 
@@ -16,7 +18,7 @@ const PullDay_bodyBuilding = () => {
         const CheckPlan = () => {
 
             const db = getDatabase();
-            const planRef = ref(db, `users/${currentUser.uid}/plan`)
+            const planRef = ref(db, `users/${currentUser.uid}${UserEmailName}/planCode`)
             onValue(planRef, (snapshot) => {
                 const planVal = snapshot.val()
                 console.log(planVal)
@@ -45,6 +47,7 @@ const PullDay_bodyBuilding = () => {
     return (
         <>
             <section className="text-gray-400 bg-gray-900 h-max ">
+                <NavigationBar/>
                 <h1 className='text-center poppins-bold text-2xl p-4 '>HAPPY PULL DAY</h1>
                 <div className="container px-5 py-10 mx-auto ">
                     <div className="flex flex-wrap -m-4">

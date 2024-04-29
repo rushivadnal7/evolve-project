@@ -5,11 +5,13 @@ import { getDownloadURL, listAll } from 'firebase/storage'
 import { ref as StorageRef } from 'firebase/storage'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import { useAuth } from '@/contexts/authcontexts/ContextIndex'
+import NavigationBar from '@/UiComponents/NavigationBar'
 
 const StraightArm_calisthenic = () => {
 
   const [urls, setUrls] = useState([])
   const { currentUser, userLoggedIn, loading } = useAuth();
+  const UserEmailName = currentUser.email.split('@')[0]
   const [plan, setPlan] = useState(null)
 
 
@@ -17,7 +19,7 @@ const StraightArm_calisthenic = () => {
     const CheckPlan = () => {
 
       const db = getDatabase();
-      const planRef = ref(db, `users/${currentUser.uid}/plan`)
+      const planRef = ref(db, `users/${currentUser.uid}${UserEmailName}/planCode`)
       onValue(planRef, (snapshot) => {
         const planVal = snapshot.val()
         console.log(planVal)
@@ -41,11 +43,12 @@ const StraightArm_calisthenic = () => {
     }
 
     loadImages()
-  }, []) 
+  }, [])
 
   return (
     <>
-      <section className="text-gray-400 bg-gray-900 h-max ">
+      <section className="text-gray-400 bg-gray-900 h-screen overflow-y-auto ">
+        <NavigationBar/>
         <h1 className='text-center poppins-bold text-2xl p-4 '>HAPPY STRAIGHT ARM DAY</h1>
         <div className="container px-5 py-10 mx-auto ">
           <div className="flex flex-wrap -m-4">

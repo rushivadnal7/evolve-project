@@ -24,6 +24,7 @@ import LegDay_bodyBuilding from './Pages/videosContentPages/LegDay_bodyBuilding'
 import PullDay_bodyBuilding from './Pages/videosContentPages/PullDay_bodyBuilding'
 import BentArm_calisthenic from './Pages/videosContentPages/BentArm_calisthenic';
 import StraightArm_calisthenic from './Pages/videosContentPages/StraightArm_calisthenic';
+import AdminPanel from './Pages/AdminPanel';
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
     {
       path: '/',
       element: <LandingPage />
+    },
+    {
+      path: '/admin',
+      element: <AdminPanel />
     },
     {
       path: '/about',

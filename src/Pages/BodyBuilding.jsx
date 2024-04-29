@@ -38,7 +38,7 @@ const BodyBuilding = () => {
             <img src={intro_img} />
           </div>
           <div className='title-div'>
-            <h1 className='font-extrabold '>Strength <br /> Training</h1>
+            <h1 className='font-extrabold '>Body Building <br /> Training</h1>
           </div>
           <div className="play-button-div">
             <Link to='/strengthVideo'>

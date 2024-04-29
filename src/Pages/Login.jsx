@@ -26,10 +26,9 @@ export const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('siuuuuuuuuuuu')
-
-
-
+    if(username === 'admin' && password === 'admin'){
+      navigate('/admin')
+    }
     if (!isSignin) {
       setIsSignIn(true)
       await doSignInWithEmailAndPassword(username, password)
