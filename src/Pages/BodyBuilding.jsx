@@ -18,9 +18,12 @@ import playButton from '../imgs/play-button.png'
 import Footer from '@/UiComponents/Footer'
 import { Link } from 'react-router-dom'
 import NavigationBar from '@/UiComponents/NavigationBar'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '@/contexts/authcontexts/ContextIndex'
 const BodyBuilding = () => {
 
-
+  const [currentUser] = useAuth()
+  const navigate = useNavigate();
 
   const [exercises, setExercises] = useState([
     { image: ChestDay, name: 'PushDay' },
@@ -30,7 +33,7 @@ const BodyBuilding = () => {
 
   return (
     <>
-
+      {!currentUser ? navigate('/login') : null}
       <NavigationBar />
       <section className='relative'>
         <div className='w-screen h-screen  bg-gray-800 relative  flex justify-center items-center'>

@@ -6,12 +6,16 @@ import { ref as StorageRef } from 'firebase/storage'
 import { getDatabase, ref, onValue } from 'firebase/database'
 import { useAuth } from '@/contexts/authcontexts/ContextIndex'
 import NavigationBar from '@/UiComponents/NavigationBar'
+import { useNavigate } from 'react-router-dom'
+
 
 const CoreMuscles_strength = () => {
     const [urls, setUrls] = useState([])
     const { currentUser, userLoggedIn, loading } = useAuth();
     const UserEmailName = currentUser.email.split('@')[0]
     const [plan, setPlan] = useState(null)
+
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -48,6 +52,7 @@ const CoreMuscles_strength = () => {
     return (
         <>
             <section class="text-gray-400 bg-gray-900 h-max w-screen body-font">
+                {!currentUser ? navigate('/login') : null }
                 <NavigationBar/>
                 <h1 className='text-center poppins-bold text-2xl p-4 '>HAPPY CORE MUSCLES DAY</h1>
                 <div class="container px-5 py-24 mx-auto">

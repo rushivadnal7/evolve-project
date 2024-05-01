@@ -11,7 +11,7 @@ const LowerBody_strength = () => {
 
     const [urls, setUrls] = useState([])
     const { currentUser, userLoggedIn, loading } = useAuth();
-    const UserEmailName = currentUser.email.split('@')[0]
+    const UserEmailName = currentUser?.email.split('@')[0] || ''
     const [plan, setPlan] = useState(null)
 
 
@@ -48,7 +48,7 @@ const LowerBody_strength = () => {
     return (
         <>
             <section class="text-gray-400 bg-gray-900 h-max w-screen body-font">
-                <NavigationBar/>
+                <NavigationBar />
                 <h1 className='text-center poppins-bold text-2xl p-4 '>HAPPY LOWER DAY</h1>
                 <div class="container px-5 py-24 mx-auto">
                     <div class="flex flex-wrap -m-4">
