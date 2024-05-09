@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import NavigationBar from '../UiComponents/NavigationBar'
 import Home from '../UiComponents/Home'
 import Program from '../UiComponents/Program'
@@ -11,12 +10,12 @@ import { useAuth } from '@/contexts/authcontexts/ContextIndex'
 
 
 const LandingPage = () => {
+
     const auth = getAuth()
     const user = auth.currentUser
 
     const { currentUser, userLoggedIn, loading } = useAuth();
-    
-//    console.log(currentUser.email)
+
     return (
         <>
             <section className='landingPage'>

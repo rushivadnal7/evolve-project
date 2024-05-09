@@ -50,7 +50,7 @@ const NavigationBar = (props) => {
                     <Link to='/about'>
                         <button class="mr-5 font-semibold  cursor-pointer hover:text-white">About</button>
                     </Link>
-                    <Link to='/'>
+                    <Link to='/contact'>
                         <button class="mr-5 font-semibold  cursor-pointer hover:text-white">Contact</button>
                     </Link>
                 </nav>
