@@ -40,12 +40,12 @@ const AdminPanel = () => {
         fetchData();
     }, []);
 
-    console.log(userData)
+    console.log(userData.length)
 
 
     return (
         <>
-            <section className='text-white h-max w-screen bg-slate-800'>
+            <section className={`text-white ${userData.length >= 5 ? 'h-max' : 'h-screen'} w-screen bg-slate-800`}>
                 <NavigationBar />
                 <div class="mx-auto max-w-screen-lg poppins px-4 py-8 sm:px-8">
                     <div class="flex items-center justify-between pb-6">
