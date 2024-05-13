@@ -6,11 +6,9 @@ import NavigationBar from '@/UiComponents/NavigationBar';
 
 
 const AdminPanel = () => {
-    const [userData, setUserData] = useState([]);
     const { currentUser, userLoggedIn, loading } = useAuth();
-
-    // console.log(currentUser)
-
+    const [userData, setUserData] = useState([]);
+    
     useEffect(() => {
         const fetchData = async () => {
             const db = getDatabase();
@@ -40,7 +38,7 @@ const AdminPanel = () => {
         fetchData();
     }, []);
 
-    console.log(userData.length)
+    console.log(userData)
 
 
     return (

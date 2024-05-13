@@ -22,27 +22,6 @@ import { getDownloadURL, listAll, ref } from 'firebase/storage'
 import NavigationBar from '@/UiComponents/NavigationBar'
 
 const Strength = () => {
-
-  // const [urls, setUrls] = useState([])
-  // useEffect(() => {
-  //   const fetchImages = async () => {
-  //     const storageRef = ref(firebaseStorage, 'strength training/upper body')
-  //     const result = await listAll(storageRef)
-  //     const urlPromises = result.items.map((imageRef) => {
-  //       return getDownloadURL(imageRef)
-  //     })
-
-  //     return Promise.all(urlPromises)
-  //   }
-  //   const loadImages = async () => {
-  //     const urls = await fetchImages()
-  //     setUrls(urls)
-  //     // console.log(urls)
-  //   }
-
-  //   loadImages()
-  // }, [])
-
   const [exercises, setExercises] = useState([
     { image: chest, name: 'UpperBody' },
     { image: leg, name: 'LowerBody' },
